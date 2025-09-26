@@ -23,9 +23,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-0hhym7y(ai1a!!y_z#sv-6shl)e(d**&-@_vm9*4mhm+d(*8da'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1', 'django-backend-practice.vercel.app']
+# ALLOWED_HOSTS = ['127.0.0.1', 'django-backend-practice.vercel.app']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -68,7 +69,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'backend.wsgi.app'
+WSGI_APPLICATION = 'backend.wsgi.application'
 
 
 # Database
