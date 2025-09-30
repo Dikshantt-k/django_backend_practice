@@ -3,6 +3,11 @@ from rest_framework import generics
 from .models import *
 from .serializers import *
 
+from django.http import HttpResponse
+
+def hello(request):
+    return HttpResponse("<h1>Hello from Django on Vercel 🚀</h1>")
+
 
 # Create your views here.
 print("views.py-----------")
