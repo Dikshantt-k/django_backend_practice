@@ -13,7 +13,7 @@
   "routes": [
     { "src": "/(.*)", 
     "dest": "backend/wsgi.py" },
-        { "src": "/staticfiles/(.*)", 
+        { "src": "/static/(.*)", 
     "dest": "staticfiles/$1" }
   ]
 }
