@@ -1,20 +1,28 @@
-set -x  # show commands
+set -x  # show each command
 echo ">>> Inside setup.sh" >&2
-
-echo ">>> Python version:" >&2
-python3 --version >&2
-
-echo ">>> Current directory before collectstatic:" >&2
 pwd >&2
 ls >&2
 
-
-pip install setuptools
 pip install -r requirements.txt
+python3 backend/manage.py migrate --noinput
+python3 backend/manage.py collectstatic --noinput
+# set -x  # show commands
+# echo ">>> Inside setup.sh" >&2
+
+# echo ">>> Python version:" >&2
+# python3 --version >&2
+
+# echo ">>> Current directory before collectstatic:" >&2
+# pwd >&2
+# ls >&2
 
 
-python manage.py makemigrations
-python manage.py migrate    
+# pip install setuptools
+# pip install -r requirements.txt
 
 
-python manage.py collectstatic
+# python manage.py makemigrations
+# python manage.py migrate    
+
+
+# python manage.py collectstatic
