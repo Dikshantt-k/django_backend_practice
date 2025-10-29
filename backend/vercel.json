@@ -3,17 +3,17 @@
 {
   "builds": [
     {
-      "src": "backend/backend/wsgi.py",
+      "src": "backend/wsgi.py",
       "use": "@vercel/python",
       "config": {
         "maxLambdaSize": "15mb",
         "runtime": "python3.12",
-        "buildCommand": "bash backend/setup.sh"
+        "buildCommand": "bash setup.sh"
       }
     }
   ],
   "routes": [
-    { "src": "/static/(.*)", "dest": "backend/staticfiles/$1" },
-    { "src": "/(.*)", "dest": "backend/backend/wsgi.py" }
+    { "src": "/static/(.*)", "dest": "staticfiles/$1" },
+    { "src": "/(.*)", "dest": "backend/wsgi.py" }
   ]
 }
